@@ -42,20 +42,20 @@ private String businessUnit;
      /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="riskSource",referencedColumnName = "businessUnitId")
     private List<transaction> transactions; */
-    @OneToMany(mappedBy = "riskSourceBu")
+   /* @OneToMany(mappedBy = "riskSourceBu")
     @JsonIgnore
     private List<transaction> transactionrisksource;
     @OneToMany(mappedBy="resolutionOwnerBu",fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<transaction> transactionresolutionowner;
-    public static department fromResolution(int resolution_owner_bu) {
+    private List<transaction> transactionresolutionowner;*/
+    public static department fromResolution(int resolution_owner) {
         department resolutionOwnerBu=new department();
-    resolutionOwnerBu.businessUnitId=resolution_owner_bu;
+    resolutionOwnerBu.businessUnitId=resolution_owner;
     return resolutionOwnerBu;}
 
-    public static department fromSource(int risk_source_bu) {
+    public static department fromRiskSource(int risk_source) {
         department riskSourceBu=new department();
-        riskSourceBu.businessUnitId=risk_source_bu;
+        riskSourceBu.businessUnitId=risk_source;
         return riskSourceBu;}
 
 

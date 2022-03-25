@@ -43,12 +43,12 @@ public class category {
     /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "category",referencedColumnName = "riskCategoryId")
     private List<transaction> transactions;*/
-    @OneToMany(mappedBy = "riskCategory")
+    /*@OneToMany(mappedBy = "riskCategory")
     @JsonIgnore
-    private List<transaction> category;
-    public static category fromCategory(int risk_category) {
+    private List<transaction> category;*/
+    public static category fromCategory(int Category) {
         category riskCategory=new category();
-        riskCategory.riskCategoryId=risk_category;
+        riskCategory.riskCategoryId=Category;
         return riskCategory;}
 
 
